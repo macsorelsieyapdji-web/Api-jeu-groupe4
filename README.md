@@ -98,7 +98,17 @@ curl "http://127.0.0.1:8000/api/v1/jeux/statistiques"
 # Obtenir un jeton de connexion
 curl -X POST "http://127.0.0.1:8000/api/v1/connexion" -d "username=admin@example.com&password=motdepasse123"
 ```
+La réponse contient le jeton dans le champ `access_token` :
 
+```json
+{"access_token": "eyJ...", "token_type": "bearer"}
+```
+
+Pour l'utiliser, recopiez la valeur de `access_token` dans l'en-tête de la requête suivante :
+
+```bash
+curl -H "Authorization: Bearer <access_token>" "http://127.0.0.1:8000/api/v1/moi/jeux"
+```
 Sous PowerShell, tapez `curl.exe` à la place de `curl`.
 
 Pour les routes qui modifient des données, envoyez le jeton reçu dans l'en-tête `Authorization: Bearer <jeton>`. Dans `/docs`, le bouton **Authorize** fait cette étape.
