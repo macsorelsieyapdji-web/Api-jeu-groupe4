@@ -155,6 +155,7 @@ flowchart LR
 2. Créez une branche depuis un `main` à jour : `fix/<numéro>-description` ou `feat/<numéro>-description`.
 3. Faites de petits commits au format `type(portée): résumé`, avec `Refs #<numéro>`.
 4. Ouvrez une pull request avec le contexte, les changements, l'impact et la façon de la tester, et `Closes #<numéro>`.
+
 5. Un autre membre relit. Après approbation et CI verte, fusion par *squash*, puis suppression de la branche.
 
 On ne pousse jamais directement sur `main`.
